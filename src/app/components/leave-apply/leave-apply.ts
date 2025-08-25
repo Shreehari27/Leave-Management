@@ -23,8 +23,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatNativeDateModule,
     MatButtonModule, MatCardModule],
   templateUrl: './leave-apply.html',
-  styleUrl: './leave-apply.css',
-  providers: [LeaveService]
+  styleUrl: './leave-apply.css'
 })
 export class LeaveApply {
   leaveForm: FormGroup;
