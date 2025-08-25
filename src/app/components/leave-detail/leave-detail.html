@@ -1,0 +1,11 @@
+<mat-card *ngIf="leave" class="detail-card">
+  <h2>{{ leave.employeeName }}'s Leave</h2>
+  <p><strong>From:</strong> {{ leave.fromDate | date }}</p>
+  <p><strong>To:</strong> {{ leave.toDate | date }}</p>
+  <p><strong>Reason:</strong> {{ leave.reason }}</p>
+  <p><strong>Status:</strong> {{ leave.status }}</p>
+</mat-card>
+
+<mat-card *ngIf="!leave" class="detail-card">
+  <p>Leave not found.</p>
+</mat-card>
