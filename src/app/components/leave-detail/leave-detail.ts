@@ -18,6 +18,10 @@ export class LeaveDetail implements OnInit {
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.leaveService.getLeaveById(id).subscribe(l => this.leave = l);
+    this.leaveService.getLeaveById(id).subscribe((l: Leave | undefined) => {
+      if (l) {
+        this.leave = l;
+      }
+    });
   }
 }

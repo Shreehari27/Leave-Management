@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms';
-import { MatCardModule, MatCard } from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
@@ -21,13 +21,13 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatButtonModule, MatCard],
+    MatButtonModule, MatCardModule],
   templateUrl: './leave-apply.html',
   styleUrl: './leave-apply.css',
   providers: [LeaveService]
 })
 export class LeaveApply {
-   leaveForm: FormGroup;
+  leaveForm: FormGroup;
 
   constructor(private fb: FormBuilder, private leaveService: LeaveService) {
     this.leaveForm = this.fb.group({
@@ -45,7 +45,7 @@ export class LeaveApply {
         ...this.leaveForm.value,
         status: 'Pending'
       };
-      this.leaveService['addLeave'](newLeave).subscribe(() => {
+      this.leaveService.addLeave(newLeave).subscribe(() => {
         alert('Leave Applied Successfully!');
         this.leaveForm.reset();
       });

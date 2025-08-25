@@ -17,12 +17,15 @@ import { RouterModule } from '@angular/router';
   styleUrl: './leave-list.css'
 })
 export class LeaveList implements OnInit {
-  leaves$!: Observable<Leave[]>;
+  leaves: Leave[] = [];
 
   constructor(private leaveService: LeaveService) { }
 
   ngOnInit(): void {
-    this.leaves$ = this.leaveService.getLeaves();
+    // ✅ Subscribe to live updates
+    this.leaveService.getLeaves().subscribe(data => {
+      this.leaves = data;
+    });
   }
 
   deleteLeave(id: number): void {
