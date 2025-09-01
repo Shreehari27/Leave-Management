@@ -1,0 +1,33 @@
+.leave-list-card {
+  max-width: 900px;
+  margin: 24px auto;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.title { margin-bottom: 12px; }
+
+.leave-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.leave-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 16px;
+  border: 1px solid #e2e2e2;
+  border-radius: 12px;
+  background: #fafafa;
+}
+
+.leave-info { display: flex; flex-direction: column; gap: 4px; }
+.name { font-weight: 600; text-decoration: none; }
+.dates { opacity: 0.9; }
+.reason { color: #555; font-style: italic; }
+.status { margin-top: 6px; font-weight: 700; }
+
+.leave-actions { display: flex; align-items: center; }

@@ -1,0 +1,17 @@
+<mat-card class="leave-list-card">
+  <h2 class="title">Leave Requests</h2>
+
+  <div class="leave-list">
+    <div *ngFor="let leave of leaves" class="leave-item">
+      <div class="leave-info">
+        <a [routerLink]="['/leaves', leave.id]" class="name">{{ leave.employeeName }}</a>
+        <p class="dates">{{ leave.fromDate | date }} → {{ leave.toDate | date }}</p>
+        <p class="reason"><strong>Reason:</strong> {{ leave.reason }}</p>
+        <span class="status" [appHighlight]="leave.status">{{ leave.status | statusPipe }}</span>
+      </div>
+      <div class="leave-actions">
+        <button mat-stroked-button color="warn" (click)="deleteLeave(leave.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+</mat-card>
