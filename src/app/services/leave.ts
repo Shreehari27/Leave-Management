@@ -2,11 +2,12 @@ import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject, of } from 'rxjs';
 import { Leave } from '../models/leave.model';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class LeaveService {
-  private leaves: Leave[] = [
+  /* private leaves: Leave[] = [
     {
       id: 1,
       employeeName: 'Ram',
@@ -22,8 +23,17 @@ export class LeaveService {
       toDate: '2025-09-12',
       reason: 'Medical',
       status: 'Approved'
+    },
+    {
+      id: 3,
+      employeeName: 'Bala',
+      fromDate: '2025-09-10',
+      toDate: '2025-09-12',
+      reason: 'Medical',
+      status: 'Rejected'
     }
-  ];
+  ]; */
+  private apiUrl = 'http://localhost:3000'; //remove this if there any issues
 
   private leavesSubject = new BehaviorSubject<Leave[]>([...this.leaves]);
 
